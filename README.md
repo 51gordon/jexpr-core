@@ -60,8 +60,9 @@ the result.  We only parse the string once, so that later on we won't
 have to parse it each time we evaluate it.
 
     try { 
-       Parser parser = new Parser()
-       parser.registerFunction(XXXFunction.class)
+       Parser parser = new Parser();
+       // action registerFunction is not necessary.
+       parser.registerFunction(XXXFunction.class);
        expr = parser.parse(args[0]);
     }
 
