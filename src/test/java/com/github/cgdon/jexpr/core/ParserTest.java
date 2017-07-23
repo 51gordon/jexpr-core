@@ -34,7 +34,7 @@ public class ParserTest {
     System.out.println(parser.parseString("rand2(0.4,0.7)").value());
     System.out.println(parser.parseString("rand2(15000,30000)").value());
     Variable.make("visit_user").setValue(25000);
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 2; i++) {
       double v = parser.parseString("rand2(14800,min(29200,visit_user))").value();
       System.out.println(v);
       if (v < 14800 || v > 25000) {
