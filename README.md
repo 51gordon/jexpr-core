@@ -120,4 +120,4 @@ Contact
 =======
 
 See the file [COPYING](COPYING) for copyright info.
-Send questions and bug reports to Darius Bacon <darius@wry.me>.
+Send questions and bug reports to Kael Chen <cgdong08@gmail.com>.
