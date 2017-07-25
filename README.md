@@ -18,6 +18,16 @@ view.
 Installing it
 =============
 
+add this dependency to you pom.xml
+```
+<dependency>  
+    <groupId>com.github.cgdon</groupId>
+    <artifactId>jexpr-core</artifactId>
+    <version>0.0.1</version> 
+</dependency>
+
+```
+
 To install, put `jexpr.jar` in your classpath. (You'll need to create
 it first by running `make`, if you downloaded this from GitHub. If you
 don't have `make`, then run `javac -O jexpr/*.java` and then `jar cf

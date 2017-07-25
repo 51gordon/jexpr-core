@@ -12,7 +12,7 @@
 
   <groupId>com.github.cgdon</groupId>
   <artifactId>jexpr-core</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
 
   <licenses>
     <license>
