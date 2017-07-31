@@ -2,6 +2,9 @@ package com.github.cgdon.jexpr.core.expr;
 
 import com.github.cgdon.jexpr.core.Expr;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by 成国栋 on 2017-07-22 23:34:00.
  */
@@ -54,5 +57,22 @@ public class BinaryExpr extends Expr {
       default:
         throw new RuntimeException("BUG: bad rator");
     }
+  }
+
+  public int getRator() {
+    return rator;
+  }
+
+  public Expr getRand0() {
+    return rand0;
+  }
+
+  public Expr getRand1() {
+    return rand1;
+  }
+
+  @Override
+  public List<Expr> childExpr() {
+    return Arrays.asList(rand0, rand1);
   }
 }

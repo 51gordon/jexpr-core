@@ -14,9 +14,10 @@ public class Rand2Function extends BinaryFunction {
   }
 
   public double value() {
+    double v0 = rand0.value();
     double v1 = rand1.value();
-    double v2 = rand2.value();
 
-    return v1 + (v2 - v1) * new Random().nextDouble();
+    return v0 + (v1 - v0) * new Random().nextDouble();
   }
+
 }

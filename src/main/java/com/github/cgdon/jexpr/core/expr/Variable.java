@@ -51,6 +51,15 @@ public class Variable extends Expr {
   }
 
   /**
+   * Get the name.
+   *
+   * @return the current name
+   */
+  public String name() {
+    return name;
+  }
+
+  /**
    * Get the value.
    *
    * @return the current value

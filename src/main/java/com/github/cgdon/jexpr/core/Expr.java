@@ -3,10 +3,11 @@
 
 package com.github.cgdon.jexpr.core;
 
-import com.github.cgdon.jexpr.core.expr.BinaryExpr;
-import com.github.cgdon.jexpr.core.expr.ConditionalExpr;
-import com.github.cgdon.jexpr.core.expr.LiteralExpr;
-import com.github.cgdon.jexpr.core.expr.UnaryExpr;
+import com.github.cgdon.jexpr.core.expr.*;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * A mathematical expression, built out of literal numbers, variables,
@@ -175,7 +176,7 @@ public abstract class Expr {
    * @param rator a code for a binary operator
    * @param rand0 left operand
    * @param rand1 right operand
-   * @return an expression meaning rator(rand0, rand1)
+   * @return an expression meaning rator(rand0, rand0)
    */
   public static Expr makeApp2(int rator, Expr rand0, Expr rand1) {
     Expr app = new BinaryExpr(rator, rand0, rand1);
@@ -201,5 +202,28 @@ public abstract class Expr {
       return test.value() != 0 ? consequent : alternative;
     else
       return cond;
+  }
+
+  public List<Expr> childExpr() {
+    return Collections.emptyList();
+  }
+
+  public List<String> getVarialbes() {
+    List<String> rtn = new ArrayList<>();
+    if (this instanceof Variable) {
+      Variable va = (Variable) this;
+      rtn.add(va.name());
+    } else {
+      List<Expr> exprList = this.childExpr();
+      if (exprList != null && !exprList.isEmpty()) {
+        for (Expr e : exprList) {
+          List<String> names = e.getVarialbes();
+          if (names != null && names.size() > 0) {
+            rtn.addAll(names);
+          }
+        }
+      }
+    }
+    return rtn;
   }
 }

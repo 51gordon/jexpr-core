@@ -273,7 +273,7 @@ public class Parser {
               expect(',');
               Expr rand2 = parseExpr(0);
               expect(')');
-              return ((BinaryFunction) func).setRand1(rand1).setRand2(rand2);
+              return ((BinaryFunction) func).setRand0(rand1).setRand1(rand2);
             } else {
               // 无参函数
               expect('(');

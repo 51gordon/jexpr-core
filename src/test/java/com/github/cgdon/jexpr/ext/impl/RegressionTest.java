@@ -1,4 +1,4 @@
-package com.github.cgdon.jexpr;
+package com.github.cgdon.jexpr.ext.impl;
 
 import com.github.cgdon.jexpr.core.Parser;
 import com.github.cgdon.jexpr.core.expr.Variable;
