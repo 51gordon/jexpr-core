@@ -30,12 +30,12 @@ public class ParserTest {
 
     System.out.println(parser.parseString("triple(min(10,40))").value());
     System.out.println(parser.parseString("rand()").value());
-    System.out.println(parser.parseString("rand1(4,7)").value());
-    System.out.println(parser.parseString("rand1(0.4,0.7)").value());
-    System.out.println(parser.parseString("rand1(15000,30000)").value());
+    System.out.println(parser.parseString("rand2(4,7)").value());
+    System.out.println(parser.parseString("rand2(0.4,0.7)").value());
+    System.out.println(parser.parseString("rand2(15000,30000)").value());
     Variable.make("visit_user").setValue(25000);
     for (int i = 0; i < 2; i++) {
-      double v = parser.parseString("rand1(14800,min(29200,visit_user))").value();
+      double v = parser.parseString("rand2(14800,min(29200,visit_user))").value();
       System.out.println(v);
       if (v < 14800 || v > 25000) {
         throw new RuntimeException("bug");
